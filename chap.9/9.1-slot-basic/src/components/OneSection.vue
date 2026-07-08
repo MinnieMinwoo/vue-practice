@@ -1,0 +1,19 @@
+<script setup lang="ts">
+interface Props {
+  name: string
+}
+defineProps<Props>()
+</script>
+
+<template>
+  <section class="box">
+    <h1>{{ name }}さんの状況</h1>
+    <slot></slot>
+  </section>
+</template>
+
+<style>
+.box {
+  border: green 1px solid;
+}
+</style>
