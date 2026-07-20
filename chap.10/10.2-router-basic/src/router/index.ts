@@ -21,8 +21,15 @@ const routeSettings: RouteRecordRaw[] = [
       return {
         id: idNumber,
       }
-    }
-  }
+    },
+  },
+  {
+    path: '/member/add',
+    name: 'MemberAdd',
+    component: () => {
+      return import('@/views/member/MemberAdd.vue')
+    },
+  },
 ]
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
