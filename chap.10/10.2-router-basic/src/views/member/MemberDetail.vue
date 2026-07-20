@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import {computed, inject} from 'vue';
-import { RouterLink } from 'vue-router';
 import type { Member } from "../../interfaces";
 
 interface Props {
@@ -21,13 +20,6 @@ const localNote = computed(() => {
 </script>
 
 <template>
-  <h1>会員管理</h1>
-  <nav id="breadcrumbs">
-    <ul>
-      <li><RouterLink v-bind:to="{name: 'AppTop'}">TOP</RouterLink></li>
-      <li>会員リスト</li>
-    </ul>
-  </nav>
   <section>
     <h2>会員詳細情報</h2>
     <dl>

@@ -11,24 +11,26 @@ const routeSettings: RouteRecordRaw[] = [
     path: '/member/memberList',
     name: 'MemberList',
     component: () => import('@/views/member/MemberList.vue'),
-  },
-  {
-    path: '/member/detail/:id',
-    name: 'MemberDetail',
-    component: () => import('@/views/member/MemberDetail.vue'),
-    props: (routes) => {
-      const idNumber = Number(routes.params.id)
-      return {
-        id: idNumber,
-      }
-    },
-  },
-  {
-    path: '/member/add',
-    name: 'MemberAdd',
-    component: () => {
-      return import('@/views/member/MemberAdd.vue')
-    },
+    children: [
+      {
+        path: 'detail/:id',
+        name: 'MemberDetail',
+        component: () => import('@/views/member/MemberDetail.vue'),
+        props: (routes) => {
+          const idNumber = Number(routes.params.id)
+          return {
+            id: idNumber,
+          }
+        },
+      },
+      {
+        path: 'add',
+        name: 'MemberAdd',
+        component: () => {
+          return import('@/views/member/MemberAdd.vue')
+        },
+      },
+    ],
   },
 ]
 const router = createRouter({
